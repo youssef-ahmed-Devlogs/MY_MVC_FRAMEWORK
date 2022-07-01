@@ -1,5 +1,5 @@
-- Helper Trait
--- redirect()
+- LayoutEngine (header, footer, css, js ...)
 - Validation Trait
-_________________________________
-- Template (header, footer, css ...)
+- Hash
+- Session
+- Upload

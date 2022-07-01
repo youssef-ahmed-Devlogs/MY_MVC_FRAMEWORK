@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
 <?php
 
 use App\Lib\FrontController;

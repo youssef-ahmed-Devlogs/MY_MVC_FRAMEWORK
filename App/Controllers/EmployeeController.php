@@ -38,8 +38,7 @@ class EmployeeController extends Controller
             $employee->salary = $request['salary'];
             $employee->tax = $request['tax'];
             if ($employee->save()) {
-                $this->redirect('/employee')->with(["success_message" => "Added 1111111111111."]);
-                // $this->redirect('/employee');
+                $this->redirect('/employee');
             }
         }
     }
