@@ -2,4 +2,4 @@
 -- redirect()
 - Validation Trait
 _________________________________
-- Template (header, footer, css ...)
+- Template (header, footer, css ..)
