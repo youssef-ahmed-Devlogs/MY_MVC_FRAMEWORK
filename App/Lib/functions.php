@@ -32,3 +32,23 @@ function dd(...$value)
     var_dump(...$value);
     die();
 }
+
+function assets()
+{
+    return '/assets/';
+}
+
+function css()
+{
+    return assets() . 'css/';
+}
+
+function js()
+{
+    return assets() . 'js/';
+}
+
+function images()
+{
+    return assets() . 'images/';
+}

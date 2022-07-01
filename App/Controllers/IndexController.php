@@ -9,11 +9,11 @@ class IndexController extends Controller
 {
     public function index()
     {
-        return view('index.index');
+        return $this->view('index.index');
     }
 
     public function add()
     {
-        return view('index.add');
+        return $this->view('index.add');
     }
 }

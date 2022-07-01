@@ -13,7 +13,7 @@ class EmployeeController extends Controller
 
     public function index()
     {
-        return view('employee.index', [
+        return $this->view('employee.index', [
             'id' => @$this->params[0],
             'name' => 'Youssef Ahmed',
             'age' => 21,
@@ -23,7 +23,7 @@ class EmployeeController extends Controller
 
     public function add()
     {
-        return view('employee.add');
+        return $this->view('employee.add');
     }
 
     public function insert()

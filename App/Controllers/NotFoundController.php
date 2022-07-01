@@ -9,7 +9,7 @@ class NotFoundController extends Controller
     public function __construct()
     {
         if (DEV_MODE) {
-            view('errors.dev.controllerNotFound');
+            $this->view('errors.dev.controllerNotFound');
         }
     }
 }

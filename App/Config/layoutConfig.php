@@ -2,9 +2,9 @@
 
 return [
     'components' => [
-        'header' => 'header.php',
-        'navbar' => 'navbar.php',
+        'header' => LAYOUT_PATH . 'header.php',
+        'navbar' => LAYOUT_PATH . 'navbar.php',
         ':view' => ':view',
-        'footer' => 'footer.php',
+        'footer' => LAYOUT_PATH . 'footer.php',
     ]
 ];

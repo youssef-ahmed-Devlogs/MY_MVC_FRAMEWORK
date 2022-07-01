@@ -7,12 +7,14 @@ class FrontController
     private string $controller = 'Index';
     private string $method = 'index';
     private array $params = [];
+    protected LayoutEngine $layoutEngine;
 
     const NOT_FOUND_CONTROLLER = 'App\Controllers\\' . 'NotFoundController';
     const NOT_FOUND_METHOD = "notFound";
 
-    public function __construct()
+    public function __construct(LayoutEngine $layoutEngine)
     {
+        $this->layoutEngine = $layoutEngine;
         $this->parseURL();
         Request::init($this->params);
     }
@@ -54,6 +56,7 @@ class FrontController
         }
 
         $controller->setParams($this->params);
+        $controller->setLayoutEngine($this->layoutEngine);
         $controller->$methodName();
     }
 }

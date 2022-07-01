@@ -1,4 +1,3 @@
-- LayoutEngine (header, footer, css, js ...)
 - Validation Trait
 - Hash
 - Session

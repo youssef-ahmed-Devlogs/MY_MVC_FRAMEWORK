@@ -1,5 +1,8 @@
 <?php
 
+define('APP_NAME', 'MVCFramework');
+
+
 require_once '../App/Lib/functions.php';
 
 /**
@@ -22,12 +25,19 @@ define('DS', DIRECTORY_SEPARATOR);
  * ============== App path ==============
  * Like this -> C:\xampp\htdocs\MVCFramework\App
  */
-define('APP_PATH', dirname(__FILE__));
-define('VIEWS_PATH', APP_PATH . DS . 'Views');
-define('CONTROLLERS_PATH', APP_PATH . DS . 'Controllers');
-define('MODELS_PATH', APP_PATH . DS . 'Models');
-define('LIB_PATH', APP_PATH . DS . 'Lib');
-define('PUBLIC_PATH', APP_PATH . DS . '..' . DS . 'Public');
+define('APP_PATH', rtrim(dirname(__FILE__), "Config"));
+define('CONTROLLERS_PATH', APP_PATH . 'Controllers' . DS);
+define('MODELS_PATH', APP_PATH . 'Models' . DS);
+define('VIEWS_PATH', APP_PATH . 'Views' . DS);
+define('CONFIG_PATH', dirname(__FILE__) . DS);
+define('LIB_PATH', APP_PATH . 'Lib' . DS);
+define('PUBLIC_PATH', APP_PATH . '..' . DS . 'Public' . DS);
+define('UPLOADS_PATH', PUBLIC_PATH . 'uploads' . DS);
+define('ASSETS_PATH', PUBLIC_PATH . 'assets' . DS);
+define('CSS_PATH', ASSETS_PATH . 'css' . DS);
+define('JS_PATH', ASSETS_PATH . 'js' . DS);
+define('IMAGES_PATH', ASSETS_PATH . 'images' . DS);
+define('LAYOUT_PATH', VIEWS_PATH . 'layout' . DS);
 
 /**
  * ============== Database Configrations ==============
