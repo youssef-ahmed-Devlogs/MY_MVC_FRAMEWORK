@@ -1,8 +1,5 @@
 <?php
 
-define('APP_NAME', 'MVCFramework');
-
-
 require_once '../App/Lib/functions.php';
 
 /**
@@ -22,7 +19,7 @@ define('DEV_MODE', true);
 define('DS', DIRECTORY_SEPARATOR);
 
 /**
- * ============== App path ==============
+ * ============== App paths ==============
  * Like this -> C:\xampp\htdocs\MVCFramework\App
  */
 define('APP_PATH', rtrim(dirname(__FILE__), "Config"));
@@ -38,6 +35,13 @@ define('CSS_PATH', ASSETS_PATH . 'css' . DS);
 define('JS_PATH', ASSETS_PATH . 'js' . DS);
 define('IMAGES_PATH', ASSETS_PATH . 'images' . DS);
 define('LAYOUT_PATH', VIEWS_PATH . 'layout' . DS);
+define('LANGUAGE_PATH', APP_PATH . 'Languages' . DS);
+
+/**
+ * ============== App Configrations ==============
+ */
+define('APP_NAME', 'MVCFramework');
+define('APP_LANG', 'en');
 
 /**
  * ============== Database Configrations ==============

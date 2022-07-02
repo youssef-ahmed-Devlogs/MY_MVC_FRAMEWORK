@@ -52,3 +52,19 @@ function images()
 {
     return assets() . 'images/';
 }
+
+function devError(string $message, $redirectPath = null)
+{
+    if (DEV_MODE) {
+        trigger_error($message, E_USER_WARNING);
+        exit;
+    }
+
+    if ($redirectPath != null) {
+        header('Location: /index/notFound');
+        exit;
+    }
+
+    header('Location: /');
+    exit;
+}

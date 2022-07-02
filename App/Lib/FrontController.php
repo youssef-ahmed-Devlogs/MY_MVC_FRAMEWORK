@@ -8,13 +8,16 @@ class FrontController
     private string $method = 'index';
     private array $params = [];
     protected LayoutEngine $layoutEngine;
+    protected LanguageEngine $languageEngine;
 
     const NOT_FOUND_CONTROLLER = 'App\Controllers\\' . 'NotFoundController';
-    const NOT_FOUND_METHOD = "notFound";
+    const NOT_FOUND_METHOD = "methodNotExist";
 
-    public function __construct(LayoutEngine $layoutEngine)
+    public function __construct(LayoutEngine $layoutEngine, LanguageEngine $languageEngine)
     {
         $this->layoutEngine = $layoutEngine;
+        $this->languageEngine = $languageEngine;
+
         $this->parseURL();
         Request::init($this->params);
     }
@@ -43,11 +46,16 @@ class FrontController
     {
         // Set controller name
         $controllerName = 'App\Controllers\\' . ucfirst($this->controller) . 'Controller';
+
         if (!class_exists($controllerName)) {
             $controllerName = self::NOT_FOUND_CONTROLLER;
         }
-
         $controller = new $controllerName();
+        $controller->setLayoutEngine($this->layoutEngine);
+        $controller->setLanguageEngine($this->languageEngine);
+        $controller->setParams($this->params);
+        $controller->setController($this->controller);
+        $controller->setMethod($this->method);
 
         // Set method name
         $methodName = $this->method;
@@ -55,8 +63,6 @@ class FrontController
             $methodName = self::NOT_FOUND_METHOD;
         }
 
-        $controller->setParams($this->params);
-        $controller->setLayoutEngine($this->layoutEngine);
         $controller->$methodName();
     }
 }

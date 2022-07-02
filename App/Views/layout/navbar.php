@@ -8,26 +8,54 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">
+                        <i class="fas fa-home"></i> <?= $text_home ?>
+                    </a>
+                </li>
+
+            </ul>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Youssef Ahmed
+                        <i class="fas fa-user"></i> Youssef Ahmed
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li><a class="dropdown-item" href="#">Score</a></li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <?= $text_profile ?>
+                            </a>
+                        </li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <?= $text_logout ?>
+                            </a>
+                        </li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                <li class="nav-item dropdown lang-dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-language" title="<?= $text_change_lang ?>"></i>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li>
+                            <a class="dropdown-item" href="/language/ar">
+                                العربية
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/language/en">
+                                English
+                            </a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/employee">Employees</a>
-                </li>
-
             </ul>
         </div>
     </div>

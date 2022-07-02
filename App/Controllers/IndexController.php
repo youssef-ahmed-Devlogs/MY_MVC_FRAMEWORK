@@ -9,7 +9,7 @@ class IndexController extends Controller
 {
     public function index()
     {
-        return $this->view('index.index');
+        return $this->view('index.index', ['title' => 'Home']);
     }
 
     public function add()

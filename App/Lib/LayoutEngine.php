@@ -16,12 +16,15 @@ class LayoutEngine
         $components =  array_key_exists('components', $this->layoutConfig) ? $this->layoutConfig['components'] : [];
 
         if (empty($components)) {
-            trigger_error('Please add app components in ' . CONFIG_PATH . ' layoutConfig.php' . ' File', E_USER_WARNING);
+            if (DEV_MODE) {
+                trigger_error('Please add components array in ' . CONFIG_PATH . ' layoutConfig.php' . ' File', E_USER_WARNING);
+                exit;
+            }
         }
 
         foreach ($components as $component) {
+            extract($data);
             if ($component === ":view") {
-                extract($data);
                 require_once $viewFilePath;
             } else {
                 require_once $component;

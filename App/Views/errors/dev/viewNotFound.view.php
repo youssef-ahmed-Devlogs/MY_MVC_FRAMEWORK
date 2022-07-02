@@ -1,1 +1,0 @@
-<h1>This view is not exists. <br> <?= $view ?></h1>

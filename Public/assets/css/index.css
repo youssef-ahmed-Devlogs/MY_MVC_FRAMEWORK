@@ -1,3 +1,10 @@
-input {
-  background-color: yellow;
+.view-page {
+  height: calc(100vh - 98px);
+  display: flex;
+  align-items: center;
+}
+
+.lang-dropdown .dropdown-menu {
+  left: initial;
+  right: 0;
 }

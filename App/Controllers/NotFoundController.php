@@ -8,8 +8,6 @@ class NotFoundController extends Controller
 {
     public function __construct()
     {
-        if (DEV_MODE) {
-            $this->view('errors.dev.controllerNotFound');
-        }
+        devError('This controller is not exist.', '/index/notFound');
     }
 }

@@ -1,1 +1,0 @@
-<h1>Sorry this method is not exist. <br> <?= $methodName ?> in line <?= $lineNumber ?></h1>
